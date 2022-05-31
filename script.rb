@@ -1,4 +1,5 @@
 def caesar_cipher(string, shift = 0)
+  shift = 0 if shift > 25
   code_array = string.codepoints.map do |code|
     next code if skip?(code)
     if code.between?(65, 90)
@@ -51,4 +52,9 @@ def skip?(code)
   end
 end
 
-p caesar_cipher(gets.chomp.to_s, 5)
+def prompt(string)
+  puts string
+  gets.chomp
+end
+
+p caesar_cipher(prompt("Enter your phrase: ").to_s, prompt("Enter you shift: ").to_i)
