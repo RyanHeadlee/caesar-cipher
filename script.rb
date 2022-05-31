@@ -1,5 +1,5 @@
 def caesar_cipher(string, shift = 0)
-  shift = 0 if shift > 25
+  shift = rand(1..25) if shift > 25 || shift < -25
   code_array = string.codepoints.map do |code|
     next code if skip?(code)
     if code.between?(65, 90)
@@ -34,6 +34,7 @@ def downcase_shift(code, shift)
 end
 
 def number_shift(code, shift)
+  shift = rand(1..9) if shift > 9 || shift < -9
   if code + shift > 57
     code = (code + shift) - (57 - 48)
   elsif code + shift < 49
