@@ -19,4 +19,4 @@ def prompt(string)
   gets.chomp
 end
 
-puts caesar_cipher(prompt("Enter your phrase: ").to_s, prompt("Enter you shift: ").to_i)
+puts caesar_cipher(prompt("Enter your phrase: ").to_s, prompt("Enter shift amount: ").to_i)
